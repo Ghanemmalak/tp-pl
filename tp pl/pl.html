@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simplex Solver</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script type="text/javascript" src="plsim.js"></script>
+<style>
+    /* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.jumbotron {
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  color: #3498db;
+}
+
+form {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+select, input {
+  padding: 8px;
+  margin: 5px;
+}
+
+#tabl {
+  min-width: 100%;
+  height: 150px; /* Set a fixed height for the textarea */
+}
+
+#solution {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+</style>
+</head>
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+  <div class="jumbotron masthead">
+    <div class="container">
+      <h1><ul>Simplex algorithm</ul></h1>
+    </div>
+  </div>
+  <br>
+
+    <form name="theSpreadsheet">
+      <h1>Simplex Solver</h1>
+
+
+      <table class="table-striped active">
+
+        <tr>
+          <td align=center>
+            <b id="tt">Type your linear programming problem below. (Press "Example" to see how to set it up.)</b><br>
+            <br>
+            <textarea id="pl" name="input" rows=5 cols=80></textarea>
+          </td>
+        </tr>
+
+
+
+
+        <tr>
+            <td>
+             <br><b id="mm">Mode:</b> <select type=hidden  id="option" NAME="Mode" SIZE=3>
+                  <OPTION SELECTED>Decimal</OPTION>
+                  <OPTION>Fraction</OPTION>
+                  <OPTION>Integer</OPTION>
+                </SELECT>
+              
+            </td>
+          </tr>
+  <tr>
+          <td align=center><b id="ss">Solution:</b><br><b><input id="solution" type=text size=80 disabled name="expr"
+                value="Optimal solution will appear here."></b>
+
+            <br>
+        <input type=hidden size=2 value="6" name="acc">
+
+        <input id="btn" type="button" class="btn btn-primary btn-small" value="Solve" onClick="doIt(2); doIt(1)"> &nbsp;
+
+        <input id="btn" type="button" class="btn btn-primary btn-small" value="Example" onClick="doIt(5)"> &nbsp;
+
+        <input id="btn" type="button" class="btn btn-primary btn-mini" value="Erase Everything" onClick="doIt(3)">
+        &nbsp;
+
+        <br>
+        <br>
+
+
+        <tr>
+
+          <td align=center>
+
+           <br> <b id="tt">The tableaus (steps) will appear here.</b><br>
+
+            <br>
+
+            <textarea id="tabl" style="min-width: 100%" name="output" rows=12 cols=80></textarea>
+
+          </td>
+
+        </tr>
+      
+      </table>
+
+    </form>
+
+
+
+
+</body>
+
+</html>
